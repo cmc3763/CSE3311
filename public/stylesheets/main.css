@@ -11,9 +11,14 @@ Run `npm run css` to compile css (will watch for changes as well)
 @tailwind components;
 @tailwind utilities;
 
+/* Global settings */
+:root {
+  @apply selection:bg-orange-300;
+}
 
 @layer components {
   /* Components go here */
+  
 
   .navbar {
     @apply flex justify-between items-center h-32 border-b-2 border-black;
@@ -30,5 +35,4 @@ Run `npm run css` to compile css (will watch for changes as well)
   .navbar-right {
     @apply mr-32 w-96 flex justify-between;
   }
-
 }
