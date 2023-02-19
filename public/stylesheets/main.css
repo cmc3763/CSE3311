@@ -1,0 +1,21 @@
+/*
+This is the main css stylesheet
+It is compiled by tailwind into styles.css
+Don't directly edit styles.css, because it will be overwritten
+Instead, add things here
+
+Run `npm run css` to compile css (will watch for changes as well)
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
