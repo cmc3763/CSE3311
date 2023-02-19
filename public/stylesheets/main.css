@@ -11,11 +11,7 @@ Run `npm run css` to compile css (will watch for changes as well)
 @tailwind components;
 @tailwind utilities;
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
-a {
-  color: #00B7FF;
+@layer components {
+  /* Components go here */
 }
