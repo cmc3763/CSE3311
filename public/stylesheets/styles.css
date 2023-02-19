@@ -545,6 +545,10 @@ video {
   justify-content: space-between;
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
 .w-96 {
   width: 24rem;
 }
@@ -576,6 +580,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .text-center {
