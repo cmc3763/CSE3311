@@ -5,5 +5,5 @@ Repository for the CSE 3311 project
 # Installation
 You'll need NodeJS and npm installed.
 
-Run `npm install` to install dependencies. Run `npm run css' then `npm start` to start the application. Look at `localhost:3000` for the homepage.
+Run `npm install` to install dependencies. Run `npm run css` then `npm start` to start the application. Look at `localhost:3000` for the homepage.
 
