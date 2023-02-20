@@ -37,10 +37,24 @@ Run `npm run css` to compile css (will watch for changes as well)
   }
 
   .buttons{
-    height: auto;
-    width: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .upload, .upload > img{
+  height: 40px;
+  border-radius: 15px;
+  }
+
+  .profile, .profile > img{
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .cart, .cart > img{
+    height: 70px;
   }
 }
