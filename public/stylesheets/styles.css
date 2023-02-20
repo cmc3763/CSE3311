@@ -538,15 +538,12 @@ video {
   margin-left: 8rem;
 }
 
-.navbar-right {
-  margin-right: 8rem;
+.buttons{
+  height: auto;
+  width: auto;
   display: flex;
-  width: 24rem;
-  justify-content: space-between;
-}
-
-.m-8 {
-  margin: 2rem;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .w-96 {

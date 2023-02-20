@@ -35,4 +35,12 @@ Run `npm run css` to compile css (will watch for changes as well)
   .navbar-right {
     @apply mr-32 w-96 flex justify-between;
   }
+
+  .buttons{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
