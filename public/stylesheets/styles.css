@@ -537,16 +537,19 @@ video {
 }
 
 .navbar-left {
-  font-size: 150%;
-  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
 }
 
 .buttons{
   display: flex;
   flex-direction: row;
+  grid-gap: 20px;
   justify-content: space-around;
   align-items: center;
-  margin: 50px;
+  margin: 25px;
 }
 
 .upload, .upload > img{
@@ -563,8 +566,8 @@ video {
   height: 70px;
 }
 
-.w-96 {
-  width: 24rem;
+.backarrow, .backarrow > img{
+  height: 30px;
 }
 
 .w-full {

@@ -12,6 +12,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 // This one serves resources (requesting user information, etc)
 var usersRouter = require('./routes/users');
+// login page
+var loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -29,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Connect the routers to the application
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

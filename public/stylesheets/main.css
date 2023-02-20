@@ -31,8 +31,11 @@ Run `npm run css` to compile css (will watch for changes as well)
   }
 
   .navbar-left {
-    @apply ml-32;
-    font-size: 150%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    
   }
 
   .navbar-center {
@@ -46,6 +49,7 @@ Run `npm run css` to compile css (will watch for changes as well)
   .buttons{
     display: flex;
     flex-direction: row;
+    grid-gap: 20px;
     justify-content: space-around;
     align-items: center;
     margin: 25px;
@@ -64,4 +68,12 @@ Run `npm run css` to compile css (will watch for changes as well)
   .cart, .cart > img{
     height: 70px;
   }
+  .cart, .cart > img{
+    height: 70px;
+  }
+
+  .backarrow, .backarrow > img{
+    height: 30px;
+  }
+
 }
