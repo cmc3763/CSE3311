@@ -525,17 +525,20 @@ video {
 /* Components go here */
 
 .navbar {
-  display: flex;
   height: 8rem;
-  align-items: center;
-  justify-content: space-between;
   border-bottom-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  background-color: #18122B;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-left {
-  margin-left: 8rem;
+  font-size: 150%;
+  padding-left: 30px;
 }
 
 .buttons{
@@ -543,7 +546,7 @@ video {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin: 10px;
+  margin: 50px;
 }
 
 .upload, .upload > img{
@@ -558,7 +561,6 @@ video {
 
 .cart, .cart > img{
   height: 70px;
-  /* border-radius: 50%; */
 }
 
 .w-96 {

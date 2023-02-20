@@ -22,10 +22,17 @@ Run `npm run css` to compile css (will watch for changes as well)
 
   .navbar {
     @apply flex justify-between items-center h-32 border-b-2 border-black;
+    background-color: #18122B;
+      color: white;
+    
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
   }
 
   .navbar-left {
     @apply ml-32;
+    font-size: 150%;
   }
 
   .navbar-center {
@@ -41,7 +48,7 @@ Run `npm run css` to compile css (will watch for changes as well)
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin: 10px;
+    margin: 25px;
   }
 
   .upload, .upload > img{
