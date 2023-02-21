@@ -35,7 +35,6 @@ Run `npm run css` to compile css (will watch for changes as well)
     flex-direction: row;
     align-items: center;
     padding-left: 10px;
-    
   }
 
   .navbar-center {
@@ -44,6 +43,10 @@ Run `npm run css` to compile css (will watch for changes as well)
 
   .navbar-right {
     @apply mr-32 w-96 flex justify-between;
+  }
+
+  .portaitCard {
+    width: 400px;
   }
 
   .buttons{
