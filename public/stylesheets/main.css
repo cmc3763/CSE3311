@@ -19,6 +19,9 @@ Run `npm run css` to compile css (will watch for changes as well)
 @layer components {
   /* Components go here */
   
+  .gallery {
+    @apply p-8 columns-4 gap-8 flex flex-wrap;
+  }
 
   .navbar {
     @apply flex justify-between items-center h-32 border-b-2 border-black;
