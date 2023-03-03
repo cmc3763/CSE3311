@@ -1,5 +1,5 @@
 /*
-This is the main css stylesheet
+This is the main css stylesheet (main.css)
 It is compiled by tailwind into styles.css
 Don't directly edit styles.css, because it will be overwritten
 Instead, add things here
@@ -18,7 +18,7 @@ Run `npm run css` to compile css (will watch for changes as well)
 
 @layer components {
   /* Components go here */
-  
+
   .gallery {
     @apply p-8 columns-4 gap-8 flex flex-wrap;
   }
@@ -27,7 +27,7 @@ Run `npm run css` to compile css (will watch for changes as well)
     @apply flex justify-between items-center h-32 border-b-2 border-black;
     background-color: #18122B;
       color: white;
-    
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -41,7 +41,7 @@ Run `npm run css` to compile css (will watch for changes as well)
   }
 
   .navbar-center {
-    
+
   }
 
   .navbar-right {
