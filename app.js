@@ -8,7 +8,7 @@ var logger = require('morgan');
 // Setting up the routers
 // Both of these are provided by default by Express
 
-// This one serves pages (ie. home page, etc)
+// This one serves pages (ie. home page, login page, etc)
 var indexRouter = require('./routes/index');
 // This one serves resources (requesting user information, etc)
 var usersRouter = require('./routes/users');
