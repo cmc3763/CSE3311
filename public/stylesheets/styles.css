@@ -553,21 +553,21 @@ video {
 }
 
 .card {
+  border-bottom-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
   margin-bottom: 0.5rem;
   height: -moz-fit-content;
   height: fit-content;
   width: 20rem;
-  border-bottom-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
   padding: 0.5rem;
   text-align: center;
   font-weight: 100;
 }
 
-.buttons{
+.buttons {
   display: flex;
   flex-direction: row;
   grid-gap: 20px;
@@ -590,12 +590,13 @@ video {
   height: 70px;
 }
 
-.backarrow, .backarrow > img{
-  height: 30px;
-}
-
 .m-auto {
   margin: auto;
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .my-8 {
@@ -611,6 +612,10 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -619,8 +624,20 @@ video {
   margin-top: 1rem;
 }
 
+.inline {
+  display: inline;
+}
+
 .grid {
   display: grid;
+}
+
+.w-3\/12 {
+  width: 25%;
+}
+
+.w-8\/12 {
+  width: 66.666667%;
 }
 
 .w-80 {
@@ -700,14 +717,6 @@ video {
   font-weight: 100;
 }
 
-.font-light {
-  font-weight: 300;
-}
-
-.font-extralight {
-  font-weight: 200;
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -734,6 +743,8 @@ video {
   background-color: rgb(253 186 116 / var(--tw-bg-opacity));
 }
 
+/* heading styles */
+
 h1 {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -750,6 +761,8 @@ h3 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+
+/* Input and form styles */
 
 input {
   height: 2.5rem;
@@ -768,6 +781,73 @@ input::-moz-placeholder {
 
 input::placeholder {
   font-weight: 300;
+}
+
+/* Button styles */
+
+button {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 50px;
+  display: block;
+  font-size: 20px;
+  border-bottom-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  /* Transform for color changing and the drop shadow */
+  transition: linear 100ms;
+}
+
+/* Drop shadow on hover */
+
+button:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-default {
+  background-color: hsla(251, 27%, 32%, 1);
+  color: white;
+}
+
+.btn-default:hover {
+  background-color: hsla(251, 27%, 32%, 0.6);
+}
+
+.btn-secondary {
+  background-color: white;
+  transition: linear 100ms;
+}
+
+.btn-secondary:hover {
+  background-color: hsla(255, 100%, 100%, 0.6);
+}
+
+.btn-primary {
+  background-color: hsla(160, 98%, 46%, 1);
+}
+
+.btn-primary:hover {
+  background-color: hsla(160, 98%, 46%, 0.6);
+}
+
+.btn-warning {
+  background-color: hsla(27, 99%, 69%, 1);
+}
+
+.btn-warning:hover {
+  background-color: hsla(27, 99%, 69%, 0.6);
+}
+
+.btn-danger {
+  background-color: hsla(0, 91%, 68%, 1);
+}
+
+.btn-danger:hover {
+  background-color: hsla(0, 91%, 68%, 0.6);
 }
 
 #loginContent {

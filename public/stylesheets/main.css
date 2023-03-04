@@ -16,6 +16,7 @@ Run `npm run css` to compile css (will watch for changes as well)
   @apply selection:bg-orange-300;
 }
 
+/* heading styles */
 h1 {
   @apply font-light text-4xl;
 }
@@ -28,6 +29,8 @@ h3 {
   @apply text-xl;
 }
 
+
+/* Input and form styles */
 input {
   @apply font-extralight w-full border-b-2 border-b-gray-500 h-10 text-xl;
 }
@@ -35,6 +38,61 @@ input {
 input::placeholder {
   @apply font-light;
 }
+
+/* Button styles */
+button {
+  width: fit-content;
+  height: 50px;
+  display: block;
+  font-size: 20px;
+  @apply two-corner-border px-3;
+  /* Transform for color changing and the drop shadow */
+  transition: linear 100ms;
+}
+
+/* Drop shadow on hover */
+button:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-default {
+  background-color: hsla(251, 27%, 32%, 1);
+  color: white;
+}
+.btn-default:hover {
+  background-color: hsla(251, 27%, 32%, 0.6);
+}
+
+.btn-secondary {
+  background-color: white;
+  transition: linear 100ms;
+}
+.btn-secondary:hover {
+  background-color: hsla(255, 100%, 100%, 0.6);
+}
+
+.btn-primary {
+  background-color: hsla(160, 98%, 46%, 1);
+}
+.btn-primary:hover {
+  background-color: hsla(160, 98%, 46%, 0.6);
+}
+
+.btn-warning {
+  background-color: hsla(27, 99%, 69%, 1);
+}
+.btn-warning:hover {
+  background-color: hsla(27, 99%, 69%, 0.6);
+}
+
+.btn-danger {
+  background-color: hsla(0, 91%, 68%, 1);
+}
+.btn-danger:hover {
+  background-color: hsla(0, 91%, 68%, 0.6);
+}
+
+
 
 @layer components {
   /* Components go here */
@@ -72,11 +130,17 @@ input::placeholder {
     width: 400px;
   }
 
-  .card {
-    @apply w-80 h-fit mb-2 p-2 border-2 text-center font-thin rounded-bl-3xl rounded-tr-3xl border-black
+  .two-corner-border {
+    @apply border-2 rounded-bl-xl rounded-tr-xl border-black;
   }
 
-  .buttons{
+  .card {
+    @apply w-80 h-fit mb-2 p-2 text-center font-thin two-corner-border;
+  }
+
+  
+
+  .buttons {
     display: flex;
     flex-direction: row;
     grid-gap: 20px;
