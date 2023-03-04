@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <!-- Bring in our stylesheet -->
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+
+    <style>
+         input {
+        border: 0;
+        outline: 1px solid black;
+        background: transparent;  
+      }
+
+      table{
+        border-collapse: separate;
+        border-spacing: 20px 20px;
+      }
+      button{
+        padding: 32px 32px;
+      }
+
+      .info{
+        margin-top: 20px;
+      }
+
+      .title{
+        margin-top: 10px;
+      }
+
+    
+    </style>
+    
+      
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-left">  
+            <div class="buttons">
+            <a href="http://localhost:3000/setting">
+                <div class="backarrow">
+                    <img src="img/backarrow.png">
+                </div>
+            </a>
+            </div>
+            <p class="text-6xl">The Art Mart</p>
+        </div>
+       
+    </div>
+    <div class = "title">
+        <h1 style = "font-size: 5vw">Card Information</h1>
+        
+
+    </div> 
+    
+    <div class = "info">
+        
+        <table>
+            <tr>
+                <td><label for="cnum">Card Details</label></td>
+                <td><input type="text" id="cnum" name="cnum"></td>
+            </tr>
+            <tr>
+                <td><label for="fname">First Name</label></td>
+                <td><input type="text" id="fname" name="fname"></td>
+                <td><label for="lname">Last Name</label></td>
+                <td><input type="text" id="lname" name="lname"></td>
+            </tr>
+            <tr>
+                <td><label for="month">Expiration Month</label></td>
+                <td><input type="text" id="month" name="month"></td>
+                <td><label for="year">Expration Year</label></td>
+                <td><input type="text" id="year" name="year"></td>
+            <tr>
+                <td><label for="sec">Security code</label></td>
+                <td><input type="text" id="sec" name="sec"></td>
+            </tr>
+
+
+            <tr>
+                <td><button type = "button" style = "background-color: blueviolet;">Save</button></td>
+            </tr>
+        </table>
+
+
+    </div>
+
+</body>
+
+<!-- This uses petite-vue. Front end logic is here -->
+
+
+
+</html>

@@ -24,4 +24,16 @@ router.get('/createAccount', function (req, res, next) {
   res.render('createAccount', { title: 'ejs' });
 });
 
+router.get('/setting',function (req,res,next){
+  res.render('setting',{title: 'ejs'})
+});
+
+router.get('/profile',function (req,res,next){
+  res.render('profile',{title: 'ejs'})
+});
+
+router.get('/card',function (req,res,next){
+  res.render('card',{title: 'ejs'})
+});
+
 module.exports = router;
