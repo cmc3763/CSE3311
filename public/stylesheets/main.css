@@ -16,6 +16,26 @@ Run `npm run css` to compile css (will watch for changes as well)
   @apply selection:bg-orange-300;
 }
 
+h1 {
+  @apply font-light text-4xl;
+}
+
+h2 {
+  @apply font-light text-2xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+input {
+  @apply font-extralight w-full border-b-2 border-b-gray-500 h-10 text-xl;
+}
+
+input::placeholder {
+  @apply font-light;
+}
+
 @layer components {
   /* Components go here */
 
@@ -50,6 +70,10 @@ Run `npm run css` to compile css (will watch for changes as well)
 
   .portaitCard {
     width: 400px;
+  }
+
+  .card {
+    @apply w-80 h-fit mb-2 p-2 border-2 text-center font-thin rounded-bl-3xl rounded-tr-3xl border-black
   }
 
   .buttons{
@@ -87,5 +111,4 @@ Run `npm run css` to compile css (will watch for changes as well)
 #loginContent {
   width: 100%;
   height: 100%;
-  padding: 3em;
 }

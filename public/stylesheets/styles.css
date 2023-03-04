@@ -1,5 +1,5 @@
 /*
-This is the main css stylesheet
+This is the main css stylesheet (main.css)
 It is compiled by tailwind into styles.css
 Don't directly edit styles.css, because it will be overwritten
 Instead, add things here
@@ -552,6 +552,21 @@ video {
   padding-left: 10px;
 }
 
+.card {
+  margin-bottom: 0.5rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 20rem;
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 100;
+}
+
 .buttons{
   display: flex;
   flex-direction: row;
@@ -579,16 +594,53 @@ video {
   height: 30px;
 }
 
+.m-auto {
+  margin: auto;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
 }
 
 .w-80 {
   width: 20rem;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .w-full {
   width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .whitespace-pre-wrap {
@@ -616,8 +668,17 @@ video {
   padding: 0.5rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-2xl {
@@ -637,6 +698,18 @@ video {
 
 .font-thin {
   font-weight: 100;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 /* Global settings */
@@ -659,4 +732,45 @@ video {
 :root::selection {
   --tw-bg-opacity: 1;
   background-color: rgb(253 186 116 / var(--tw-bg-opacity));
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+input {
+  height: 2.5rem;
+  width: 100%;
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(107 114 128 / var(--tw-border-opacity));
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 200;
+}
+
+input::-moz-placeholder {
+  font-weight: 300;
+}
+
+input::placeholder {
+  font-weight: 300;
+}
+
+#loginContent {
+  width: 100%;
+  height: 100%;
 }
