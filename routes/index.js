@@ -11,8 +11,17 @@ router.get('/', function(req, res, next) {
 
 // GET login page.
 router.get('/login', function (req, res, next) {
-  // This tells express to look for login.html
   res.render('login', { title: 'ejs' });
+});
+
+// GET forgot password page.
+router.get('/forgot', function (req, res, next) {
+  res.render('forgot', { title: 'ejs' });
+});
+
+// GET create account page.
+router.get('/createAccount', function (req, res, next) {
+  res.render('createAccount', { title: 'ejs' });
 });
 
 module.exports = router;

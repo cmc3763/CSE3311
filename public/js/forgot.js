@@ -1,8 +1,8 @@
 import { createApp } from 'https://unpkg.com/petite-vue?module'
 
 window.vue = createApp({
-    handleLogin() {
-        alert("Login logic goes here!");
+    sendPasswordResetEmail() {
+        alert("Password reset logic goes here");
         window.location = '/';
     }
 }).mount()
