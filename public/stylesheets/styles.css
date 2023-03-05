@@ -590,6 +590,18 @@ video {
   height: 70px;
 }
 
+.backarrow, .backarrow > img{
+  height: 30px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.m-8 {
+  margin: 2rem;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -602,6 +614,11 @@ video {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mb-1 {
@@ -628,8 +645,20 @@ video {
   display: inline;
 }
 
+.flex {
+  display: flex;
+}
+
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
+}
+
+.h-8 {
+  height: 2rem;
 }
 
 .w-3\/12 {
@@ -652,6 +681,15 @@ video {
   width: 100%;
 }
 
+.min-w-fit {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.border-collapse {
+  border-collapse: collapse;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -672,6 +710,10 @@ video {
   border-top-right-radius: 1.5rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-2 {
   border-width: 2px;
 }
@@ -683,6 +725,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-8 {
@@ -719,6 +765,10 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.outline {
+  outline-style: solid;
 }
 
 /* Global settings */
