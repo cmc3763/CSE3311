@@ -36,4 +36,9 @@ router.get('/card',function (req,res,next){
   res.render('card',{title: 'ejs'})
 });
 
+//GET art_page page
+router.get('/art_page', function (req, res, next) {
+  res.render('art_page', { title: 'ejs' });
+});
+
 module.exports = router;
