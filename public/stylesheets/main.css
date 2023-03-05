@@ -18,15 +18,15 @@ Run `npm run css` to compile css (will watch for changes as well)
 
 /* heading styles */
 h1 {
-  @apply font-light text-4xl;
+  @apply font-light text-4xl mb-8;
 }
 
 h2 {
-  @apply font-light text-2xl;
+  @apply font-light text-2xl mb-6;
 }
 
 h3 {
-  @apply text-xl;
+  @apply text-xl mb-4;
 }
 
 
