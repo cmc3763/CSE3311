@@ -16,14 +16,18 @@
 
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
     <div id="loginContent" class="grid grid-cols-3 grid-gap-4">
         <div></div>
         <div id="loginCard" class="card mt-12 m-auto w-96 px-8">
             <h1 class="my-8">Login</h1>
 
             <form class="mt-4">
-                <input type="text" class="mb-1" placeholder="Email">
-                <input type="password" class="mb-1" placeholder="Password">
+                <input type="text" id="email" class="mb-1" placeholder="Email">
+                <input type="password" id="password" class="mb-1" placeholder="Password">
             </form>
 
             <p onclick="location = '/forgot'" class="underline text-right cursor-pointer mb-1">Forgot password?</p>

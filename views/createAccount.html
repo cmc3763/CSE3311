@@ -16,19 +16,23 @@
 
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
     <div id="loginContent" class="grid grid-cols-3 grid-gap-4">
         <div></div>
         <div id="loginCard" class="card mt-12 m-auto w-96 px-8">
             <h1 class="my-8">Create Account</h1>
 
             <form class="mt-4">
-                <input type="text" class="mb-1" placeholder="Name">
-                <input type="text" class="mb-1" placeholder="Email">
+                <input type="text" id="name" class="mb-1" placeholder="Name">
+                <input type="text" id="email" class="mb-1" placeholder="Email">
             </form>
             
             <form class="mt-4">
-                <input v-model="newPassword" type="password" class="mb-1" placeholder="Password">
-                <input v-model="newPasswordConfirm" type="password" class="mb-1" placeholder="Confirm Password">
+                <input v-model="newPassword" id="password" type="password" class="mb-1" placeholder="Password">
+                <input v-model="newPasswordConfirm" id="confirmPassword" type="password" class="mb-1" placeholder="Confirm Password">
             </form>
 
 
