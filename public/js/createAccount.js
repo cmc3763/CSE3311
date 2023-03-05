@@ -3,12 +3,13 @@ const { initializeApp } = require('firebase/app');
 require('firebase/database');
 
 const firebaseConfig = {
-    apiKey: "undefined",
-    authDomain: "undefined",
-    projectId: "login-sign-up-the-artmart",
-    storageBucket: "undefined",
-    messagingSenderId: "undefined",
-    appId: "1:472331438304:web:4cd9fba159c8888029a885"
+    apiKey: "AIzaSyAVsw8cVFyZj5KwRAMID2Dc06amVD6_LVg",
+    authDomain: "login-for-the-artmart.firebaseapp.com",
+    databaseURL: "https://login-for-the-artmart-default-rtdb.firebaseio.com",
+    projectId: "login-for-the-artmart",
+    storageBucket: "login-for-the-artmart.appspot.com",
+    messagingSenderId: "453895598278",
+    appId: "1:453895598278:web:cac2395b4d9c635e54a7c7"
 };
 
 const app = initializeApp(firebaseConfig);
