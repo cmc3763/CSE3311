@@ -1,86 +1,63 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Create Account | The Art Mart</title>
-    <!-- Bring in our stylesheet -->
-    <link rel="stylesheet" href="stylesheets/styles.css" />
-  </head>
-  <script src="http://localhost:3000/scripts/createAccount.js"></script>
-  <body id="login">
-    <div class="navbar">
-      <div class="navbar-left">
-        <div class="buttons">
-            <a href="http://localhost:3000/login">
-                <div class="backarrow">
-                    <img src="img/backarrow.png">
+
+
+    <head>
+        <meta charset="utf-8">
+        <title>Login + Firebase Database</title>
+         <!-- Cool Google Fonts -->
+       
+        <!-- Our stylesheet -->
+        <link rel="stylesheet" href="stylesheets/styles.css">
+
+        <!-- update the version number as needed -->
+    
+    <!-- include only the Firebase features as you need -->
+    
+    </head>
+    <body>
+
+      <div class="navbar">
+        <div class="navbar-left">
+                <div class="buttons">
+                    <a href="http://localhost:3000/login">
+                        <div class="backarrow">
+                            <img src="img/backarrow.png">
+                        </div>
+                    </a>
                 </div>
-            </a>
-            </div>
-        <p class="text-6xl">The Art Mart</p>
-      </div>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-    <script>
-      // Import the functions you need from the SDKs you need
-      //import { initializeApp } from "firebase/app";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyAVsw8cVFyZj5KwRAMID2Dc06amVD6_LVg",
-        authDomain: "login-for-the-artmart.firebaseapp.com",
-        databaseURL:
-          "https://login-for-the-artmart-default-rtdb.firebaseio.com",
-        projectId: "login-for-the-artmart",
-        storageBucket: "login-for-the-artmart.appspot.com",
-        messagingSenderId: "453895598278",
-        appId: "1:453895598278:web:81e3ac9668cc8a5b54a7c7",
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-
-      //make auth and firestore references
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-    </script>
-    <div id="loginContent" class="grid grid-cols-3 grid-gap-4">
-      <div></div>
-      <div id="loginCard" class="card mt-12 m-auto w-96 px-8">
-        <h1 class="my-8">Create Account</h1>
-
-        <form class="mt-4">
-          <input type="text" id="name" class="mb-1" placeholder="Name" />
-          <input type="text" id="email" class="mb-1" placeholder="Email" />
-        </form>
-
-        <form class="mt-4">
-          <input
-            v-model="newPassword"
-            id="password"
-            type="password"
-            class="mb-1"
-            placeholder="Password"
-          />
-          <input
-            v-model="newPasswordConfirm"
-            id="confirmPassword"
-            type="password"
-            class="mb-1"
-            placeholder="Confirm Password"
-          />
-        </form>
-
-        <div id="buttonGroup" class="text-right my-12 w-full">
-          <button onclick="createAccount()" class="btn-primary inline">
-            Create Account
-          </button>
+            <p class="text-6xl">The Art Mart</p>
         </div>
-      </div>
+
     </div>
-  </body>
+        <div class = "wrapper">
+            <h1>Create Account</h1>
+            <form onsubmit="signup(event)">
+                <div>
+                    <input type = "text" name="" id="firstname" placeholder="firstname">
+                </div>
+
+                <div>
+                    <input type = "text" name="" id="lastname" placeholder="lastname">
+                </div>
+                <div>
+                    <input type = "email" name="" id="email" placeholder="email">
+                </div>
+                <div>
+                    <input type = "password" name="" id="password" placeholder="password">
+                </div>
+
+                <button id="signupinp" value="Sign up">Sign up</button>
+            </form>
+        </div>
+        
+        
+
+    </body>
+
+    <script src="http://localhost:3000/scripts/createAccount.js" type = "module"></script>
 </html>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+   
+    <!-- Our script must be loaded after firebase references -->
