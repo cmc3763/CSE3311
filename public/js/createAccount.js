@@ -5,7 +5,7 @@ function createAccount(email, password) {
   console.log(password);
 
   axios
-    .put("http://localhost:3000/users/registerl", {
+    .put("http://localhost:3000/users/register", {
       email: email,
       password: password,
     })
