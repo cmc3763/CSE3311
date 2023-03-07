@@ -1,7 +1,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getAuth ,createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
-
+import {getFirestore,collection,addDoc} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,6 +20,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const db = getFirestore(app);
+
 
 
 var firstname = document.getElementById('firstname');
@@ -34,12 +36,19 @@ var password = document.getElementById("password");
 
     createUserWithEmailAndPassword(auth,email.value,password.value)
     .then(function(success){
+
+      const docRef = addDoc(collection(db,"Users"),{
+        email:email.value,
+        name:firstname.value
+
+      });
       alert("signup sucessfully")
+
+
     })
     .catch(function(err){
       alert("error" + err)
     })
 
-    console.log(email);
-    console.log(password);
+    
   }
