@@ -7,14 +7,14 @@
         <meta charset="utf-8">
         <title>Login + Firebase Database</title>
          <!-- Cool Google Fonts -->
-       
+
         <!-- Our stylesheet -->
         <link rel="stylesheet" href="stylesheets/styles.css">
 
         <!-- update the version number as needed -->
-    
+
     <!-- include only the Firebase features as you need -->
-    
+
     </head>
     <body>
 
@@ -31,33 +31,35 @@
         </div>
 
     </div>
-        <div class = "wrapper">
-            <h1>Create Account</h1>
-            <form onsubmit="signup(event)">
-                <div>
-                    <input type = "text" name="" id="firstname" placeholder="firstname">
-                </div>
+        <div class = "wrapper grid grid-cols-6">
+            <div class="card w-full mt-12 col-start-3 col-span-2">
+                <h1>Create Account</h1>
+                <form onsubmit="signup(event)">
+                    <div class="my-2">
+                        <input type = "text" name="" id="firstname" placeholder="First Name">
+                    </div>
 
-                <div>
-                    <input type = "text" name="" id="lastname" placeholder="lastname">
-                </div>
-                <div>
-                    <input type = "email" name="" id="email" placeholder="email">
-                </div>
-                <div>
-                    <input type = "password" name="" id="password" placeholder="password">
-                </div>
+                    <div  class="my-2">
+                        <input type = "text" name="" id="lastname" placeholder="Last Name">
+                    </div>
+                    <div  class="my-2">
+                        <input type = "email" name="" id="email" placeholder="Email">
+                    </div>
+                    <div  class="my-2">
+                        <input type = "password" name="" id="password" placeholder="Password">
+                    </div>
 
-                <button id="signupinp" value="Sign up">Sign up</button>
-            </form>
+                    <button id="signupinp" class="mt-2 btn-primary" value="Sign up">Sign up</button>
+                </form>
+            </div>
         </div>
-        
-        
+
+
 
     </body>
 
     <script src="http://localhost:3000/scripts/createAccount.js" type = "module"></script>
 </html>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-   
+
     <!-- Our script must be loaded after firebase references -->
