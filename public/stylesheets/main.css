@@ -39,6 +39,11 @@ input::placeholder {
   @apply font-light;
 }
 
+.artDisplay {
+  display: flex;
+  align-items: start;
+}
+
 /* Button styles */
 button {
   width: fit-content;
