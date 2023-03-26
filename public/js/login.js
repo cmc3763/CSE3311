@@ -1,38 +1,58 @@
-// Import the necessary Firebase libraries
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+import { getAuth,signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
-// Import petite-vue
-import { createApp } from 'https://unpkg.com/petite-vue?module';
 
-// Your Firebase project's configuration
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAVsw8cVFyZj5KwRAMID2Dc06amVD6_LVg",
-    authDomain: "login-for-the-artmart.firebaseapp.com",
-    databaseURL: "https://login-for-the-artmart-default-rtdb.firebaseio.com",
-    projectId: "login-for-the-artmart",
-    storageBucket: "login-for-the-artmart.appspot.com",
-    messagingSenderId: "453895598278",
-    appId: "1:453895598278:web:cac2395b4d9c635e54a7c7"
+  apiKey: "AIzaSyAVsw8cVFyZj5KwRAMID2Dc06amVD6_LVg",
+  authDomain: "login-for-the-artmart.firebaseapp.com",
+  databaseURL: "https://login-for-the-artmart-default-rtdb.firebaseio.com",
+  projectId: "login-for-the-artmart",
+  storageBucket: "login-for-the-artmart.appspot.com",
+  messagingSenderId: "453895598278",
+  appId: "1:453895598278:web:cac2395b4d9c635e54a7c7"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 
-// Create the Vue app
-const vm = createApp({
-  email: '',
-  password: '',
-  handleLogin() {
-    const auth = getAuth(app);
-    signInWithEmailAndPassword(auth, this.email, this.password)
-      .then(() => {
-        console.log('Successfully logged in.');
-        // Redirect the user to their dashboard or homepage
-      })
+
+
+  const MyBtn = document.getElementById("loginBtn");
+
+
+  MyBtn.addEventListener("click" , function(e){
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+  
+  
+    signInWithEmailAndPassword(auth,email.value,password.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert("Signed in");
+    })
       .catch((error) => {
-        console.error('Error logging in:', error.message);
-        // Display an error message to the user
-      });
-  }
-}).mount('#login');
+        alert("Failed to login" + error);
+    });
+  });
+
+  
+  
+ 
+
+
+
+
+
+
+
+
+
+// Initialize Firebase
+
+
+
