@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getAuth} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
-
+import {getFirestore,collection,getDocs} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAVsw8cVFyZj5KwRAMID2Dc06amVD6_LVg",
@@ -15,12 +15,26 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-var email = "";
-
-
+const db = getFirestore(app);
 
 
 auth.onAuthStateChanged(user =>{
-    console.log(user);
-    email = user.email;
+    
+    var email = user.email;  
+
+    const ref = getDocs(collection(db,"Users")).then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {          
+
+            if(email == doc._document.data.value.mapValue.fields.email.stringValue){
+                document.getElementById("fname").value = doc._document.data.value.mapValue.fields.name.stringValue;
+                document.getElementById("email").value = email;
+            }      
+            
+        })
+    })
 })
+
+
+
+
+
