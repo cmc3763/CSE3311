@@ -34,6 +34,7 @@ const auth = getAuth();
       .then((userCredential) => {
         const user = userCredential.user;
         alert("Signed in");
+        window.location.href = "http://localhost:3000";
     })
       .catch((error) => {
         alert("Failed to login" + error);

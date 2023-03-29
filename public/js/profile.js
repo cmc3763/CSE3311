@@ -15,13 +15,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-const MyBtn = document.getElementById("SignOutBtn");
-
-MyBtn.addEventListener("click",function(e){
-    auth.signOut().then(() =>{
-        alert("User Signed out");
-    });
-});
+var email = "";
 
 
 
+
+auth.onAuthStateChanged(user =>{
+    console.log(user);
+    email = user.email;
+})
