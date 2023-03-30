@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cart</title>
+    <!-- Bring in our stylesheet -->
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <p class="text-6xl">The Art Mart</p>
+        </div>
+        <div class="navbar-right">
+            <a href="#" class="text-2xl">Shopping Cart</a>
+        </div>
+    </div>
+
+    <div class="w-full grid grid-cols-3 gap-4 mt-8">
+        <div class="col-start-1 col-span-1">
+            <img src="https://via.placeholder.com/150" alt="Artwork">
+        </div>
+        <div class="col-start-2 col-span-2">
+            <h2 class="text-3xl">Artwork Title</h2>
+            <p class="text-xl">Artist Name - Category - Size</p>
+            <p class="text-xl">$99.99</p>
+        </div>
+    </div>
+
+    <div class="w-full grid grid-cols-3 gap-4 mt-8">
+        <div class="col-start-1 col-span-1">
+            <img src="https://via.placeholder.com/150" alt="Artwork">
+        </div>
+        <div class="col-start-2 col-span-2">
+            <h2 class="text-3xl">Artwork Title</h2>
+            <p class="text-xl">Artist Name - Category - Size</p>
+            <p class="text-xl">$49.99</p>
+        </div>
+        <div class="col-start-3 col-span-1">
+            <button class="btn-secondary" onclick="removeItem(this)">Remove</button>
+        </div>
+    </div>
+
+    <div class="w-full grid grid-cols-6 mt-8">
+        <div class="col-start-2 col-span-2">
+            <h3 class="text-2xl">Shipping Information</h3>
+            <p class="text-lg">John Doe</p>
+            <p class="text-lg">123 Main St</p>
+            <p class="text-lg">Anytown, USA 12345</p>
+            <button class="btn-secondary mt-2">Edit Location</button>
+        </div>
+        <div class="col-start-4 col-span-2">
+            <h3 class="text-2xl">Order Summary</h3>
+            <p class="text-lg">Subtotal: $149.98</p>
+            <p class="text-lg">Estimated Shipping & Handling: $8.00</p>
+            <p class="text-lg">Estimated Tax: $12.00</p>
+            <p class="text-lg font-bold">Total: $169.98</p>
+        </div>
+    </div>
+
+    <div class="w-full grid grid-cols-6 mt-8">
+        <div class="col-start-2 col-span-2">
+            <h3 class="text-2xl">Pickup Message</h3>
+            <p class="text-lg">Leave a message for the seller:</p>
+            <textarea class="mt-2 w-full h-32"></textarea>
+            <button class="btn-secondary mt-2">Message The Seller</button>
+        </div>
+    </div>
+    <div class="w-full grid grid-cols-6">
+        <div class="col-start-3 col-span-2 mt-16 text-center">
+            <button onclick="location = '/'" class="btn-default mx-auto">Continue Shopping</button>
+            <button class="btn-primary mx-auto">Checkout</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
