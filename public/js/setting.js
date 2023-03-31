@@ -20,6 +20,7 @@ const MyBtn = document.getElementById("SignOutBtn");
 MyBtn.addEventListener("click",function(e){
     auth.signOut().then(() =>{
         alert("User Signed out");
+        window.location.href = "http://localhost:3000";
     });
 });
 

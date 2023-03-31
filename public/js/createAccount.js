@@ -39,16 +39,20 @@ var password = document.getElementById("password");
 
       const docRef = addDoc(collection(db,"Users"),{
         email:email.value,
-        name:firstname.value
+        name:firstname.value,
+        lname:lastname.value
 
       });
       alert("signup sucessfully")
+     
 
 
     })
     .catch(function(err){
       alert("error" + err)
     })
+
+    
 
     
   }
