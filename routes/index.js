@@ -45,5 +45,10 @@ router.get('/art_page', function (req, res, next) {
   res.render('art_page', { title: 'ejs' });
 });
 
+//GET upload page
+router.get('/upload', function (req, res, next) {
+  res.render('upload', { title: 'ejs' });
+});
+
 
 module.exports = router;
