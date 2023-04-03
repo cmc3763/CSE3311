@@ -32,8 +32,9 @@ const auth = getAuth();
   
     signInWithEmailAndPassword(auth,email.value,password.value)
       .then((userCredential) => {
-        const user = userCredential.user;
-        alert("Signed in");
+        // Set the user is sessionStorage
+        sessionStorage.setItem("loggedIn", true);
+        sessionStorage.setItem("user", JSON.stringify(userCredential.user));
         window.location.href = "http://localhost:3000";
     })
       .catch((error) => {
