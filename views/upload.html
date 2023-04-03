@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <meta charset="utf-8">
+        <title>Login + Firebase Database</title>
+         <!-- Cool Google Fonts -->
+
+        <!-- Our stylesheet -->
+        <link rel="stylesheet" href="stylesheets/styles.css">
+
+        <!-- update the version number as needed -->
+
+    <!-- include only the Firebase features as you need -->
+
+    </head>
+    <body>
+
+      <div class="navbar">
+        <div class="navbar-left">
+                <div class="buttons">
+                    <a href="http://localhost:3000/login">
+                        <div class="backarrow">
+                            <img src="img/backarrow.png">
+                        </div>
+                    </a>
+                </div>
+            <p class="text-6xl">The Art Mart</p>
+        </div>
+      </div>
+
+      <div>
+        <label>Image Name</label> <input type="text" id="namebox"> <label id="extlab"></label> <br><br>
+        <img id="myimg"> <label id="uploadProgress"></label> <br><br>
+
+        <button id="selectbtn">Select Image</button>
+        <button id="uploadbtn">Upload Image</button>
+        <button id="downloadbtn">Download Image</button>
+
+      </div>
+        <!-- <div class = "wrapper grid grid-cols-6">
+            <div class="card w-full mt-12 col-start-3 col-span-2">
+                <h1>Upload Your Art</h1>
+                <form onsubmit="signup(event)">
+                    <div class="my-2">
+                        <input type = "text" name="" id="firstname" placeholder="First Name">
+                    </div>
+
+                    <div  class="my-2">
+                        <input type = "text" name="" id="lastname" placeholder="Last Name">
+                    </div>
+                    <div  class="my-2">
+                        <input type = "email" name="" id="email" placeholder="Email">
+                    </div>
+                    <div  class="my-2">
+                        <input type = "password" name="" id="password" placeholder="Password">
+                    </div>
+
+                    <button id="signupinp" class="mt-2 btn-primary" value="Sign up">Sign up</button>
+                </form>
+            </div>
+        </div> -->
+
+
+
+    </body>
+
+    <script src="http://localhost:3000/scripts/upload.js" type = "module"></script>
+</html>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <!-- Our script must be loaded after firebase references -->
