@@ -5,41 +5,39 @@
         <!-- Bring in our stylesheet -->
         <link rel="stylesheet" href="stylesheets/styles.css">
     </head>
-    <body>
+    <body id="app">
         <div class="navbar">
-        <div class="navbar-left">
-            <a href="http://localhost:3000">
-                <div class="backarrow">
-                    <img src="img/backarrow.png">
-                </div>
-            </a>
-            <p class="text-6xl">The Art Mart</p>
+            <div class="navbar-left">
+                <p class="text-6xl">The Art Mart</p>
+            </div>
+            <div class="buttons">
+                <a v-if="loggedIn" href="http://localhost:3000/upload">
+                    <div class="upload">
+                        <img src="img/upload.png">
+                    </div>
+                </a>
+                <a v-if="loggedIn" href="http://localhost:3000/login">
+                    <div class="profile icon">
+                        <img src="img/profile.png">
+                    </div>
+                </a>
+                <a v-if="loggedIn" href="http://localhost:3000/cart">
+                    <div class="cart">
+                        <img src="img/cart.png">
+                    </div>
+                </a>
+                <a v-if="loggedIn" href="http://localhost:3000/setting">
+                    <div class="cart">
+                        <img src="img/settings.png">
+                    </div>
+                </a>
+                <a v-if="!loggedIn" href="http://localhost:3000/login">
+                    <div class="text-2xl">
+                        Login
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="buttons">
-            <a href="http://localhost:3000/upload">
-                <div class="upload">
-                    <img src="img/upload.png">
-                </div>
-            </a>
-            <a href="http://localhost:3000/login">
-                <div class="profile">
-                    <img src="img/profile.png">
-                </div>
-            </a>
-            <a href="http://localhost:3000/cart">
-                <div class="cart">
-                    <img src="img/cart.png">
-                </div>
-            </a>
-            </a>
-            <a href="http://localhost:3000/setting">
-                <div class="settings">
-                    <img src="img/settings.png">
-                </div>
-            </a>
-        </div>
-
-    </div>
 
     <div class="artDisplay flex">
         <div class="pl-20 py-10 flex-none">
@@ -78,3 +76,6 @@
     </div>
     </body>
 </html>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="js/artwork.js" type="module"></script>

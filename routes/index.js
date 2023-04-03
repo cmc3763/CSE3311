@@ -14,6 +14,11 @@ router.get('/login', function (req, res, next) {
   res.render('login', { title: 'ejs' });
 });
 
+// Logout functionality
+router.get('/logout', function (req, res, next) {
+  res.render('logout', { title: 'ejs' });
+});
+
 // GET forgot password page.
 router.get('/forgot', function (req, res, next) {
   res.render('forgot', { title: 'ejs' });
