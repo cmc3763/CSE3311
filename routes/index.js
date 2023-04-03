@@ -40,6 +40,11 @@ router.get('/cart',function (req,res,next){
   res.render('cart',{title: 'ejs'})
 });
 
+// GET view orders
+router.get('/cart/view-orders',function (req,res,next){
+  res.render('view_orders',{title: 'ejs'})
+});
+
 //GET art_page page
 router.get('/art_page', function (req, res, next) {
   res.render('art_page', { title: 'ejs' });
