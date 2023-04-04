@@ -38,7 +38,8 @@ const auth = getAuth();
         window.location.href = "http://localhost:3000";
     })
       .catch((error) => {
-        alert("Failed to login" + error);
+        let errorMsg = document.getElementById("errorMsg");
+        errorMsg.style.display = "block";
     });
   });
 
