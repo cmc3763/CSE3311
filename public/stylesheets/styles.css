@@ -613,6 +613,10 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
 }

@@ -8,82 +8,80 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <style>
-       
-       .wrapper{
+        .wrapper {
             display: flex;
-            position:relative;
-       }
+            position: relative;
+        }
 
-       .wrapper .sidebar{
+        .wrapper .sidebar {
             position: fixed;
             width: 200px;
             height: 100%;
-            background:hsla(251, 27%, 32%, 0.6);
+            background: hsla(251, 27%, 32%, 0.6);
 
-       }
-       .wrapper .sidebar h1{
-            color:#fff;
+        }
+
+        .wrapper .sidebar h1 {
+            color: #fff;
             text-align: center;
             margin-bottom: 10px;
-       }
+        }
 
-       .wrapper .sidebar ul li{
-            padding:15px;
-            color:#fff;
-       }
+        .wrapper .sidebar ul li {
+            padding: 15px;
+            color: #fff;
+        }
 
-       .wrapper .sidebar ul li a .fas{
+        .wrapper .sidebar ul li a .fas {
             width: 25px;
-       }
+        }
 
-       .wrapper .sidebar ul li:hover{
+        .wrapper .sidebar ul li:hover {
             background: hsla(251, 27%, 32%, 0.6);
-       }
+        }
 
-       .info{
+        .info {
             margin-left: 15%;
-       }
-
-       
+        }
     </style>
 
-    
-    
-      
+
+
+
 </head>
 
 <body>
     <div class="navbar">
-        <div class="navbar-left">  
+        <div class="navbar-left">
             <div class="buttons">
-            <a href="http://localhost:3000">
-                <div class="backarrow">
-                    <img src="img/backarrow.png">
-                </div>
-            </a>
+                <a href="http://localhost:3000">
+                    <div class="backarrow">
+                        <img src="img/backarrow.png">
+                    </div>
+                </a>
             </div>
-            <p class="text-6xl">The Art Mart</p>
+            <a href="/" class="text-6xl">The Art Mart</a>
         </div>
-       
+
     </div>
 
     <div class="wrapper">
         <div class="sidebar">
             <h1>User Settings</h1>
             <ul>
-                
+
                 <li><a href="http://localhost:3000/profile"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="http://localhost:3000/card"><i class="fas fa-credit-card"></i>Card Information</a></li>
-                <li id = "SignOutBtn">Sign out</li>
+                <li id="SignOutBtn">Sign out</li>
             </ul>
 
         </div>
 
-        
-        
+
+
     </div>
 
-   
+
 
 </body>
 
