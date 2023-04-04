@@ -5,78 +5,122 @@
     <title>Cart</title>
     <!-- Bring in our stylesheet -->
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <style>
+        .parent {
+            min-height: 300px;
+            width: 50vw;
+            border: 1px solid black;
+            border-radius: 15px;
+            flex-direction: row;
+            align-items: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .square {
+            width: 100%;
+            height: 0;
+            padding-top: 100%;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .section {
+            width: 200px;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .title {
+            padding-left: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            text-align: center;
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+
+        .shoppingcart,
+        .shoppingcart>img {
+            height: 70px;
+            padding-right: 10px;
+        }
+
+        .text {
+            font-size: 50px;
+            font: bold
+        }
+
+        .grandchild {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-around;
+            font-size: medium;
+        }
+    </style>
 </head>
 
 <body>
     <div class="navbar">
         <div class="navbar-left">
-            <div class="buttons"></div>
-            <a href="/" class="text-6xl">The Art Mart</a>
+            <a href="http://localhost:3000/">
+                <div class="backarrow">
+                    <img src="../img/backarrow.png">
+                </div>
+            </a>
+            <p class="text-6xl">The Art Mart</p>
         </div>
-        <div class="navbar-right">
-            <a href="http://localhost:3000/cart/view-orders" class="text-2xl">Orders & Returns</a> 
-        </div>
-    </div>
-
-    <div class="w-full grid grid-cols-3 gap-4 mt-8">
-        <div class="col-start-1 col-span-1">
-            <img src="https://via.placeholder.com/150" alt="Artwork">
-        </div>
-        <div class="col-start-2 col-span-2">
-            <h2 class="text-3xl">Artwork Title</h2>
-            <p class="text-xl">Artist Name - Category - Size</p>
-            <p class="text-xl">$99.99</p>
-        </div>
-    </div>
-
-    <div class="w-full grid grid-cols-3 gap-4 mt-8">
-        <div class="col-start-1 col-span-1">
-            <img src="https://via.placeholder.com/150" alt="Artwork">
-        </div>
-        <div class="col-start-2 col-span-2">
-            <h2 class="text-3xl">Artwork Title</h2>
-            <p class="text-xl">Artist Name - Category - Size</p>
-            <p class="text-xl">$49.99</p>
-        </div>
-        <div class="col-start-3 col-span-1">
-            <button class="btn-secondary" onclick="removeItem(this)">Remove</button>
-        </div>
-    </div>
-
-    <div class="w-full grid grid-cols-6 mt-8">
-        <div class="col-start-2 col-span-2">
-            <h3 class="text-2xl">Shipping Information</h3>
-            <p class="text-lg">John Doe</p>
-            <p class="text-lg">123 Main St</p>
-            <p class="text-lg">Anytown, USA 12345</p>
-            <button class="btn-secondary mt-2">Edit Location</button>
-        </div>
-        <div class="col-start-4 col-span-2">
-            <h3 class="text-2xl">Order Summary</h3>
-            <p class="text-lg">Subtotal: $149.98</p>
-            <p class="text-lg">Estimated Shipping & Handling: $8.00</p>
-            <p class="text-lg">Estimated Tax: $12.00</p>
-            <p class="text-lg font-bold">Total: $169.98</p>
+        <div class="buttons">
+            <a href="http://localhost:3000/upload">
+                <div class="upload">
+                    <img src="../img/upload.png">
+                </div>
+            </a>
+            <a href="http://localhost:3000/login">
+                <div class="profile">
+                    <img src="../img/profile.png">
+                </div>
+            </a>
+            <a href="http://localhost:3000/cart">
+                <div class="cart">
+                    <img src="../img/cart.png">
+                </div>
+            </a>
+            </a>
+            <a href="http://localhost:3000/setting">
+                <div class="settings">
+                    <img src="../img/settings.png">
+                </div>
+            </a>
+            <a href="http://localhost:3000/cart/view-orders" class="text-2xl">Orders & Returns</a>
         </div>
     </div>
 
-    <div class="w-full grid grid-cols-6 mt-8">
-        <div class="col-start-2 col-span-2">
-            <h3 class="text-2xl">Pickup Message</h3>
-            <p class="text-lg">Leave a message for the seller:</p>
-            <textarea class="mt-2 w-full h-32"></textarea>
-            <button class="btn-secondary mt-2">Message The Seller</button>
+
+    <div class="title">
+        <div class="shoppingcart">
+            <img src="../img/checkoutcart.png">
+        </div>
+        <div class="text">
+            <h1>Shopping Cart</h1>
         </div>
     </div>
-    <div class="w-full grid grid-cols-6">
-        <div class="col-start-3 col-span-2 mt-16 text-center">
-            <button onclick="location = '/'" class="btn-default mx-auto">Continue Shopping</button>
-            <button class="btn-primary mx-auto">Checkout</button>
-        </div>
+
+
+    <div class="parent">
     </div>
 
 </body>
 
-<script src="js/cart.js"></script>
-
 </html>
+
