@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login | The Art Mart</title>
+    <!-- Bring in our stylesheet -->
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+
+<body id="login">
+    <div class="navbar">
+        <div class="navbar-left">
+                <div class="buttons">
+                    <a href="http://localhost:3000">
+                        <div class="backarrow">
+                            <img src="img/backarrow.png">
+                        </div>
+                    </a>
+                </div>
+            <a href="/" class="text-6xl">The Art Mart</a>
+        </div>
+
+    </div>
+
+  
+
+    <div class="grid grid-cols-3 grid-gap-4">
+        <div></div>
+        <div class="card font-bold mt-12 m-auto w-96 px-8">
+            Logging you out
+        </div>
+    </div>
+</body>
+
+<script>
+    sessionStorage.setItem("loggedIn", false);
+    sessionStorage.setItem("user", null);
+    setTimeout(() => {
+        window.location = "/login";
+    }, 1000);
+</script>
+
+<!-- This uses petite-vue. Front end logic is here -->
+<script src="js/login.js" type="module"></script>
+
+</html>

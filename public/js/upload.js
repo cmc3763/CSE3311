@@ -6,6 +6,13 @@ import {getStorage, ref as sRef, uploadBytesResumable, getDownloadURL} from "htt
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+
+// Protected page, if the user isn't logged in, redirect to /login
+if (!JSON.parse(sessionStorage.getItem("loggedIn"))) {
+  window.location = "/login";
+}
+
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAVsw8cVFyZj5KwRAMID2Dc06amVD6_LVg",

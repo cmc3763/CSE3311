@@ -7,30 +7,45 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
 
-<body>
+<script>
+    let loggedIn = JSON.parse(sessionStorage.getItem("loggedIn"));
+</script>
+
+<body id="app">
     <div class="navbar">
         <div class="navbar-left">
-            <p class="text-6xl">The Art Mart</p>
+            <div class="buttons"></div>
+            <a href="/" class="text-6xl">The Art Mart</a>
         </div>
         <div class="buttons">
-            <a href="http://localhost:3000/upload">
+            <a v-if="loggedIn" href="/upload">
                 <div class="upload">
                     <img src="img/upload.png">
                 </div>
             </a>
-            <a href="http://localhost:3000/login">
+            <a v-if="loggedIn" href="/profile">
                 <div class="profile icon">
                     <img src="img/profile.png">
                 </div>
             </a>
-            <a href="http://localhost:3000/cart">
+            <a v-if="loggedIn" href="/cart">
                 <div class="cart">
                     <img src="img/cart.png">
                 </div>
             </a>
-            <a href="http://localhost:3000/setting">
+            <a v-if="loggedIn" href="/setting">
                 <div class="cart">
                     <img src="img/settings.png">
+                </div>
+            </a>
+            <a v-if="!loggedIn" href="/login">
+                <div class="text-2xl">
+                    Login
+                </div>
+            </a>
+            <a v-if="loggedIn" href="/logout">
+                <div class="text-2xl">
+                    Logout
                 </div>
             </a>
         </div>
@@ -85,7 +100,8 @@
 
 </body>
 
-<!-- This uses petite-vue. Front end logic is here -->
+<!-- This uses vue. Front end logic is here -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="js/index.js" type="module"></script>
 
 </html>

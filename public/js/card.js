@@ -2,6 +2,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import { getAuth} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 import {getFirestore,collection,setDoc,doc,getDocs} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
 
+// Protected page, if the user isn't logged in, redirect to /login
+if (!JSON.parse(sessionStorage.getItem("loggedIn"))) {
+  window.location = "/login";
+}
+
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyAVsw8cVFyZj5KwRAMID2Dc06amVD6_LVg",
     authDomain: "login-for-the-artmart.firebaseapp.com",
