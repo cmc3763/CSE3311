@@ -17,32 +17,32 @@
             <p class="text-6xl">The Art Mart</p>
         </div>
         <div class="buttons">
-            <a v-if="loggedIn" href="http://localhost:3000/upload">
+            <a v-if="loggedIn" href="/upload">
                 <div class="upload">
                     <img src="img/upload.png">
                 </div>
             </a>
-            <a v-if="loggedIn" href="#">
+            <a v-if="loggedIn" href="/profile">
                 <div class="profile icon">
                     <img src="img/profile.png">
                 </div>
             </a>
-            <a v-if="loggedIn" href="http://localhost:3000/cart">
+            <a v-if="loggedIn" href="/cart">
                 <div class="cart">
                     <img src="img/cart.png">
                 </div>
             </a>
-            <a v-if="loggedIn" href="http://localhost:3000/setting">
+            <a v-if="loggedIn" href="/setting">
                 <div class="cart">
                     <img src="img/settings.png">
                 </div>
             </a>
-            <a v-if="!loggedIn" href="http://localhost:3000/login">
+            <a v-if="!loggedIn" href="/login">
                 <div class="text-2xl">
                     Login
                 </div>
             </a>
-            <a v-if="loggedIn" href="http://localhost:3000/logout">
+            <a v-if="loggedIn" href="/logout">
                 <div class="text-2xl">
                     Logout
                 </div>
