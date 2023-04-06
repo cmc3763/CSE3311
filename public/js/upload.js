@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import { getAuth ,createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 import {getFirestore,collection,addDoc} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
 import {getStorage, ref as sRef, uploadBytesResumable, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
+import {getDatabase, ref, set, child, get} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -31,17 +32,24 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const storage = getStorage(app);
 const db = getFirestore(app);
+const realdb = getDatabase(app);
 
 var files = [];
 var reader = new FileReader();
+var ImageLinksArray = [];
 
 var namebox = document.getElementById('namebox');
 var extlab = document.getElementById('extlab');
 var myimg = document.getElementById('myimg');
 var proglab = document.getElementById('uploadProgress');
+var pieceName = document.getElementById('artName');
+var creator = document.getElementById('artistName');
+var price = document.getElementById('price');
+var prodDesc = document.getElementById('description');
 var select = document.getElementById('selectbtn');
 var upload = document.getElementById('uploadbtn');
 var download = document.getElementById('downloadbtn');
+
 
 var input = document.createElement('input');
 input.type = 'file';
@@ -62,6 +70,7 @@ selectbtn.onclick = function(){
     input.click();
 }
 
+
 function GetFileExt(file){
     var temp = file.name.split('.');
     var ext = temp.slice((temp.length-1),(temp.length));
@@ -74,15 +83,17 @@ function GetFileName(file){
     return fname;
 }
 //uploading an image
-async function UploadProcess(){
-    var ImgToUpload = files[0];
+
+function UploadProcess(imgToUpload, imgNo){
+    var imgToUpload = files[0];
     var ImgName = namebox.value + extlab.innerHTML;
     const metaData = {
-        contentType: ImgToUpload.type
-    }
+        contentType: imgToUpload.type
+    };
+    const imageAddress="Images/" + ImgName;
     const storage = getStorage();
-    const storageRef = sRef(storage, "Images/"+ImgName);
-    const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+    const storageRef = sRef(storage, imageAddress);
+    const UploadTask = uploadBytesResumable(storageRef, imgToUpload, metaData);
     UploadTask.on('state-changed', (snapshot)=>{
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         proglab.innerHTML = "Upload "+ progress + "%";
@@ -92,12 +103,29 @@ async function UploadProcess(){
     },
     () =>{
         getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>{
+            ImageLinksArray.push(downloadURL);
             console.log(downloadURL);
+            proglab.innerHTML = "Image upload successful!"
+            UploadInfo();
         })
     });
 }
 
 uploadbtn.onclick = UploadProcess;
+
+//Uploading art info
+function UploadInfo(){
+    set(ref(realdb, "GalleryInfo/" + namebox.value),{
+        ArtTitle: pieceName.value,
+        Artist: creator.value,
+        Price: price.value,
+        Description: prodDesc.value,
+        LinksOfImagesArray: ImageLinksArray
+    });
+
+    alert("Upload successful!");
+}
+
 /*
 var firstname = document.getElementById('firstname');
 var lastname = document.getElementById('lastname');
