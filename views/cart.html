@@ -6,38 +6,6 @@
     <!-- Bring in our stylesheet -->
     <link rel="stylesheet" href="stylesheets/styles.css">
     <style>
-        .parent {
-            min-height: 300px;
-            width: 50vw;
-            border: 1px solid black;
-            border-radius: 15px;
-            flex-direction: row;
-            align-items: center;
-            display: block;
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .square {
-            width: 100%;
-            height: 0;
-            padding-top: 100%;
-            background-color: #ccc;
-            position: relative;
-        }
-
-        .content {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .section {
-            width: 200px;
-            padding: 20px 0;
-            text-align: center;
-        }
-
         .title {
             padding-left: 10px;
             display: flex;
@@ -55,18 +23,78 @@
             padding-right: 10px;
         }
 
-        .text {
-            font-size: 50px;
-            font: bold
+        .checkoutbutton,
+        .checkoutbutton>img {
+            height: 70px;
         }
 
-        .grandchild {
+        .artwork,
+        .artwork>img {
+            height: 200px;
+            padding-right: 10px;
+        }
+
+        div.cart1{
+            font-size: 20px;
+            padding: 20px;
+            width: 60vw;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 22vw;
+        }
+
+        .preview{
             display: flex;
             flex-direction: row;
-            text-align: center;
-            justify-content: space-around;
+            width: 500px;
+            flex-wrap: wrap;
+        }
+
+        .preview .text{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview img{
+            border-radius: 0 15px 0 15px;
+        }
+
+        .info{
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .shipping{
+            font-size: 90%;
+            margin-top: 10px;
+            line-height: 18px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .summary{
+            background-color: #F1F1F1;
+            height: 250px;
+            width: 300px;
+            padding: 10px;
+        }
+
+        .smallTitle{
+            font-weight: bold;
+        }
+
+        .summaryText{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
             font-size: medium;
         }
+
     </style>
 </head>
 
@@ -106,7 +134,7 @@
         </div>
     </div>
 
-
+<div class="body">
     <div class="title">
         <div class="shoppingcart">
             <img src="../img/checkoutcart.png">
@@ -116,10 +144,55 @@
         </div>
     </div>
 
-
-    <div class="parent">
+    <div class="cart1">
+        <div class="preview">
+            <div class="artwork">
+                <img src="../img/test.png">
+            </div>
+            <div class="info">
+                <div class="text">
+                    <b>Title</b>
+                    <span>Artist</span>
+                    <span>Category</span>
+                    <span>Size</span>
+                </div>
+            <span class="price">
+                $300.00
+            </span>
+        </div>
+        <div class="shipping">
+            <span class="smallTitle">Shipping</span>
+            <span>Arrives Sat, April 8 <a href="">  </a></span> 
+            <span class="smallTitle">Pickup</span>
+            <span>
+                <a href="http://localhost:3000/cart/view-orders">Message The Seller</a>
+            </span>
+        </div>
     </div>
-
+    <div class="summary">
+        <b>Summary</b>
+        <div class="summaryText">
+            <span>Subtotal</span>
+            <span>$300.00</span>
+        </div>
+        <div class="summaryText">
+            <span>Shipping and Handling</span>
+            <span>$8</span>
+        </div>
+        <div class="summaryText">
+            <span>Total</span>
+            <span>$308.00</span>
+        </div>
+        <div class="buttons">
+            <a href="http://localhost:3000/upload">
+                <div class="checkoutbutton">
+                    <img src="../img/checkout-button.png">
+                </div>
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
 </body>
 
 </html>
