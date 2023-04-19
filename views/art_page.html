@@ -47,28 +47,23 @@
 
     <div class="artDisplay flex">
         <div class="pl-20 py-10 flex-none">
-            <img id="imageDisplay" width="800px">
+            <img id="imageDisplay" src="https://firebasestorage.googleapis.com/v0/b/login-for-the-artmart.appspot.com/o/Images%2Ffridge.jpg?alt=media&token=5fef8127-b96e-495a-827c-6dd2d3f45ffe" width="800px">
         </div>
         <div class="artDescription m-8">
             <div class="h1">
-                <p class="text-6xl" id="piece"><strong>Artwork</strong></p>
+                <p class="text-6xl" id="piece"><strong>{{ image.ArtTitle }}</strong></p>
                 <br>
-                <p class="text-6xl text-right" id="artistName"><i>Artist</i></p>
+                <p class="text-6xl text-right" id="artistName"><i>{{ image.Artist }}</i></p>
             </div>
             <div class="Description">
                 <p class="pt-3 text-2xl" id="description">
-                    This piece is for demo purposes only and will not be sold on the real site. 
-                    This piece is for demo purposes only and will not be sold on the real site. 
-                    This piece is for demo purposes only and will not be sold on the real site.
-                    This piece is for demo purposes only and will not be sold on the real site. 
-                    This piece is for demo purposes only and will not be sold on the real site. 
-                    This piece is for demo purposes only and will not be sold on the real site.
+                    {{ image.Description }}
                     <br>
                     <br>
                 </p>
                 <div class="Price and Cart">
                     <p class="text-6xl pr-8" id="price">
-                        <strong id="priceValue">$300.00</strong>
+                        <strong id="priceValue">{{ imagePrice() }}</strong>
                         <div id="buttonGroup" class="text-right my-12 w-full">
                             <button onclick="location = '/error'" class="btn-primary inline w-3/12">Add to Cart</button>
                         </div>

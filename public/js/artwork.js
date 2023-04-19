@@ -1,23 +1,4 @@
-// const { createApp } = Vue;
-//
-// createApp({
-//     data() {
-//         return {
-//             loggedIn: false,
-//             user: null
-//         }
-//     },
-//     mounted() {
-//         this.loggedIn = JSON.parse(sessionStorage.getItem("loggedIn"));
-//         this.user = JSON.parse(sessionStorage.getItem("user"));
-//     }
-// }).mount("#app");
-
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
-import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
 import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
 // Your web app's Firebase configuration
@@ -40,6 +21,9 @@ var image = null;
 // the last part of the URL to the name of the image. This is because there's no ID attached to each
 // image (at least at the moment).
 //
+// What we should do is put the images ID as a url parameter from the gallery page, then dynamically
+// fetch just that image when we load this page.
+//
 // After fetching all images and finding the current one, it fill in the HTML elements with the image
 // name, description, artist, etc. through manual DOM manipulation (gross)
 async function loadImage() {
@@ -55,7 +39,6 @@ async function loadImage() {
             })
         });
 
-    console.log(image);
     document.getElementById("imageDisplay").src = image.LinksOfImagesArray[0];
     document.getElementById("piece").innerText = image.ArtTitle;
     document.getElementById("artistName").innerText = image.Artist;
