@@ -978,6 +978,12 @@ button:hover {
   background-color: hsla(0, 91%, 68%, 0.6);
 }
 
+/* we set a width here in case there is no description */
+
+#description {
+  width: 1000px;
+}
+
 #loginContent {
   width: 100%;
   height: 100%;
