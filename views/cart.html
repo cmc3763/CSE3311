@@ -95,7 +95,31 @@
             font-size: medium;
         }
 
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            grid-gap: 20px;
+        }
+
+        div.buttons > div{
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 0 15px 0 15px;
+            cursor: pointer;
+        }
+
+        div.checkoutbutton{
+            background-color: #443C68;
+            color: white;
+        }
+
+        div.remove-button {
+            background-color: #F86464;
+        }
+
     </style>
+    <script src="js/cart.js" type="module"></script>
 </head>
 
 <body>
@@ -159,39 +183,41 @@
             <span class="price">
                 $300.00
             </span>
-        </div>
-        <div class="shipping">
-            <span class="smallTitle">Shipping</span>
-            <span>Arrives Sat, April 8 <a href="">  </a></span> 
-            <span class="smallTitle">Pickup</span>
-            <span>
-                <a href="http://localhost:3000/cart/view-orders">Message The Seller</a>
-            </span>
-        </div>
-    </div>
-    <div class="summary">
-        <b>Summary</b>
-        <div class="summaryText">
-            <span>Subtotal</span>
-            <span>$300.00</span>
-        </div>
-        <div class="summaryText">
-            <span>Shipping and Handling</span>
-            <span>$8</span>
-        </div>
-        <div class="summaryText">
-            <span>Total</span>
-            <span>$308.00</span>
-        </div>
-        <div class="buttons">
-            <a href="http://localhost:3000/upload">
-                <div class="checkoutbutton">
-                    <img src="../img/checkout-button.png">
+            </div>
+            <div class="shipping">
+                <span class="smallTitle">Shipping</span>
+                <span>Arrives Sat, April 8 <a href="">  </a></span> 
+                <span class="smallTitle">Pickup</span>
+                <span>
+                    <a href="http://localhost:3000/cart/view-orders">Message The Seller</a>
+                </span>
+            </div>
+            <div class="buttons">
+                <div class="remove-button">
+                            Remove
                 </div>
-            </a>
+            </div>
         </div>
+        <div class="summary">
+            <b>Summary</b>
+            <div class="summaryText">
+                <span>Subtotal</span>
+                <span>$300.00</span>
+            </div>
+            <div class="summaryText">
+                <span>Shipping and Handling</span>
+                <span>$8</span>
+            </div>
+            <div class="summaryText">
+                <span>Total</span>
+                <span>$308.00</span>
+            </div>
+            <div class="buttons">            
+                <div class="checkoutbutton">
+                        Checkout
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 </body>
 
