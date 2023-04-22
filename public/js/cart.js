@@ -6,19 +6,31 @@ if (!JSON.parse(sessionStorage.getItem("loggedIn"))) {
 var removeCartItemButtons = document.getElementsByClassName('remove-button');
 var checkoutButton = document.getElementsByClassName('checkoutbutton');
 
-console.log(removeCartItemButtons)
 for (var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i]
     button.addEventListener('click', function (event) {
         var buttonClicked = event.target;
-        console.log("clicky clicky");
         buttonClicked.parentElement.parentElement.remove();
-        updateCartTotal()
+        checkQuantity();
     })
+}
+
+// This is called in artwork.js
+export function addToCart() {
+    //display image, description, price
 }
 
 function updateCartTotal() {
     //need to update cart total
 }
 
-//needs logic if there is nothing in the cart.
+// If the cart is empty
+function checkQuantity() {
+    var cartQuantity = document.getElementsByClassName('preview');
+    if (cartQuantity.length < 1) {
+        var summary = document.getElementsByClassName('summary');
+        summary[0].remove();
+    }
+    // need to display "your cart is empty"
+    //alert("Your cart is empty");
+}

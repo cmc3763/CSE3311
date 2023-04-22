@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+import { addToCart } from "./cart.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -52,3 +53,11 @@ async function loadImage() {
 
 
 loadImage();
+
+//If user adds to cart
+var itemToAdd = document.getElementById('buttonGroup')
+itemToAdd.addEventListener('click', function (event) {
+    var buttonClicked = event.target;
+    //need to pass image, description, and price
+    addToCart();
+})
