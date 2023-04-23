@@ -5,6 +5,20 @@ if (!JSON.parse(sessionStorage.getItem("loggedIn"))) {
     
 var removeCartItemButtons = document.getElementsByClassName('remove-button');
 var checkoutButton = document.getElementsByClassName('checkoutbutton');
+const Artist = localStorage.getItem('artistName');
+const Piece = localStorage.getItem('piece');
+const Description = localStorage.getItem('description');
+const Price = localStorage.getItem('PriceValue');
+const image = localStorage.getItem('image');
+
+console.log(Artist);
+console.log(Piece);
+console.log(Description);
+console.log(Price);
+
+//This will change the art but it will also mess up every art on artpage
+//I dont know why it does that
+//document.getElementById('artist').textContent = Artist;
 
 for (var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i]

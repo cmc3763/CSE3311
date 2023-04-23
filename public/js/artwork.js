@@ -16,6 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const realdb = getDatabase(app);
 var image = null;
+localStorage.clear();
 
 // This is really really bad and needs to be refactored but I don't have the resources now.
 // Right now, it's fetching all images from the DB and finding the current image by matching 
@@ -59,5 +60,12 @@ var itemToAdd = document.getElementById('buttonGroup')
 itemToAdd.addEventListener('click', function (event) {
     var buttonClicked = event.target;
     //need to pass image, description, and price
+    localStorage.setItem("piece",image.ArtTitle);
+    localStorage.setItem("artistName",image.Artist);
+    localStorage.setItem("description",image.Description);
+    localStorage.setItem("PriceValue",image.Price);
+    localStorage.setItem("image",image.LinksOfImagesArray[0]);
+    window.location.href = "http://localhost:3000/cart";
+
     addToCart();
 })
