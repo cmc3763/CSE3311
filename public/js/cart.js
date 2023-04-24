@@ -2,7 +2,7 @@
 if (!JSON.parse(sessionStorage.getItem("loggedIn"))) {
     window.location = "/login";
 }
-    
+
 var removeCartItemButtons = document.getElementsByClassName('remove-button');
 var checkoutButton = document.getElementsByClassName('checkoutbutton');
 const Artist = localStorage.getItem('artistName');
@@ -11,10 +11,10 @@ const Description = localStorage.getItem('description');
 const Price = localStorage.getItem('PriceValue');
 const image = localStorage.getItem('image');
 
-console.log(Artist);
-console.log(Piece);
-console.log(Description);
-console.log(Price);
+// console.log(Artist);
+// console.log(Piece);
+// console.log(Description);
+// console.log(Price);
 
 //This will change the art but it will also mess up every art on artpage
 //I dont know why it does that
@@ -22,7 +22,7 @@ console.log(Price);
 
 for (var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i]
-    button.addEventListener('click', function (event) {
+    button.addEventListener('click', function(event) {
         var buttonClicked = event.target;
         buttonClicked.parentElement.parentElement.remove();
         checkQuantity();

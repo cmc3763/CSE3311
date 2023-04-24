@@ -185,3 +185,9 @@ button:hover {
   width: 100%;
   height: 100%;
 }
+
+#reviewTextbox {
+    margin-top: 5em;
+    margin-bottom: 1em;
+    width: 400px;
+}
