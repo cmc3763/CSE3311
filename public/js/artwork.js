@@ -69,9 +69,9 @@ async function loadImage() {
     document.getElementById("piece").innerText = image.ArtTitle;
     document.getElementById("artistName").innerText = image.Artist;
     if (image.Description.length == 0) {
-        document.getElementById("description").innerText = "No description provided.";
+        document.getElementById("imageDescription").innerText = "No description provided.";
     } else {
-        document.getElementById("description").innerText = image.Description;
+        document.getElementById("imageDescription").innerText = image.Description;
     }
     document.getElementById("priceValue").innerText = "$" + image.Price + ".00";
 }
