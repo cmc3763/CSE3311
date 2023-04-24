@@ -79,9 +79,10 @@ async function loadImage() {
 loadImage();
 
 //If user adds to cart
-var itemToAdd = document.getElementById('buttonGroup')
+var itemToAdd = document.getElementById('addToCart');
 itemToAdd.addEventListener('click', function(event) {
     var buttonClicked = event.target;
+    console.log("Adding to cart");
     //need to pass image, description, and price
     localStorage.setItem("piece", image.ArtTitle);
     localStorage.setItem("artistName", image.Artist);
@@ -90,7 +91,7 @@ itemToAdd.addEventListener('click', function(event) {
     localStorage.setItem("image", image.LinksOfImagesArray[0]);
     window.location.href = "http://localhost:3000/cart";
 
-    
+
 })
 
 
