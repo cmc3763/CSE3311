@@ -99,7 +99,7 @@ button:hover {
 
 
 /* we set a width here in case there is no description */
-#description {
+#imageDescription {
     width: 1000px;
 }
 

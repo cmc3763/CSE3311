@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 import { addToCart } from "./cart.js";
+import { getAuth, } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,9 +16,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const realdb = getDatabase(app);
+const auth = getAuth();
 var image = null;
 localStorage.clear();
-
 
 function loadReviewsFor(artist) {
     let reviewsRef = ref(realdb, "ArtistReviews");
