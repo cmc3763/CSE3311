@@ -67,6 +67,7 @@ paypal.Buttons({
         remove(ref(realdb, "GalleryInfo/" + Piece)).then(() => {
             localStorage.clear();
             alert("Transaction Complete");
+            window.location.href = "http://localhost:3000";
         });
 
         

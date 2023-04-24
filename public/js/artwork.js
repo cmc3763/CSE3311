@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 const realdb = getDatabase(app);
 const auth = getAuth();
 var image = null;
-localStorage.clear();
+
 
 function loadReviewsFor(artist) {
     let reviewsRef = ref(realdb, "ArtistReviews");
