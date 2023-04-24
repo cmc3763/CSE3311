@@ -29,23 +29,35 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const realdb = getDatabase(app);
 
+if(Piece == null)
+{
+    
+}
+else
+{
+    document.getElementById('artist').textContent = "Artist: " + Artist;
+    document.getElementById('Title1').textContent = "Title: " + Piece;
+    document.getElementById('price').textContent = "$" + Price;
+    document.getElementById('TheImage').src = image;
+    document.getElementById('SubPrice').textContent = "$" + Price;
+    var total = Number(Price) + 8;
+    document.getElementById('TotalPrice').textContent ="$" + total;
+
+}
 
 
 //This will change the art but it will also mess up every art on artpage
 //I dont know why it does that
-document.getElementById('artist').textContent = "Artist: " + Artist;
-document.getElementById('Title1').textContent = "Title: " + Piece;
-document.getElementById('price').textContent = "$" + Price;
-document.getElementById('TheImage').src = image;
-document.getElementById('SubPrice').textContent = "$" + Price;
-var total = Number(Price) + 8;
-document.getElementById('TotalPrice').textContent ="$" + total;
+
+
+
 
 // removing items from cart
 var removeCartItemButtons = document.getElementsByClassName('remove-button');
 for (var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i]
     button.addEventListener('click', function(event) {
+        localStorage.clear();
         var buttonClicked = event.target;
         buttonClicked.parentElement.parentElement.remove();
         checkQuantity();
