@@ -1,6 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-import { addToCart } from "./cart.js";
 import { getAuth, } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
 // Your web app's Firebase configuration
@@ -91,7 +90,7 @@ itemToAdd.addEventListener('click', function(event) {
     localStorage.setItem("image", image.LinksOfImagesArray[0]);
     window.location.href = "http://localhost:3000/cart";
 
-    addToCart();
+    
 })
 
 

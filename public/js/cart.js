@@ -18,7 +18,10 @@ const image = localStorage.getItem('image');
 
 //This will change the art but it will also mess up every art on artpage
 //I dont know why it does that
-//document.getElementById('artist').textContent = Artist;
+document.getElementById('artist').textContent = "Artist:" + Artist;
+document.getElementById('Title1').textContent = "Title:" + Piece;
+document.getElementById('price').textContent = "$" + Price;
+document.getElementById('TheImage').src = image;
 
 for (var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i]
@@ -30,9 +33,7 @@ for (var i = 0; i < removeCartItemButtons.length; i++) {
 }
 
 // This is called in artwork.js
-export function addToCart() {
-    //display image, description, price
-}
+
 
 function updateCartTotal() {
     //need to update cart total
