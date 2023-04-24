@@ -37,9 +37,6 @@ router.get('/profile', function(req, res, next) {
     res.render('profile', { title: 'ejs' })
 });
 
-router.get('/money', function(req, res, next) {
-    res.render('money', { title: 'ejs' })
-});
 
 router.get('/card', function(req, res, next) {
     res.render('card', { title: 'ejs' })
