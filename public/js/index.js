@@ -35,6 +35,7 @@ const storage = getStorage(app);
 const db = getFirestore(app);
 const realdb = getDatabase(app);
 
+
 createApp({
     data() {
         return {
@@ -72,6 +73,57 @@ function AddAllProducts() {
 }
 
 function AddAProduct(product, index) {
+    let url = encodeURI("http://localhost:3000/art_page/" + product.ArtTitle);
+    let html =
+        `
+    <a href="` + url + `">
+        <div class="w-80 mb-2">
+            <img src="`+ product.LinksOfImagesArray[0] + `" class="w-full rounded-tr-3xl" id="thumbnail` + index + `">
+            <div class="p-2 border-2 w-full font-thin text-center rounded-bl-3xl border-black">
+                <div class="text-2xl whitespace-pre-wrap" id="title`+ index + `">` + product.ArtTitle + `</div>
+                <div class="text-2xl" id="artist">`+ product.Artist + `</div>
+                <div class="text-lg" id="price">$`+ product.Price + `.00</div>
+            </div>
+        </div>
+    </a>
+    `
+
+    let newProd = document.createElement("div");
+    console.log(product.LinksOfImagesArray[0]);
+    newProd.classList.add('artcard');
+    newProd.innerHTML = html;
+    OuterDiv.append(newProd);
+}
+
+const searchInput = document.querySelector("[data-search]");
+searchInput.addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase();
+    console.log(value);
+    productArray.forEach(prod => {
+        const isVisible = prod.ArtTitle.toLowerCase().includes(value) || prod.Artist.toLowerCase().includes(value);
+        prod.element.classList.toggle("hide", !isVisible);
+    })
+})
+
+function updateGallery() {
+    const dbref = ref(realdb);
+    get(child(dbref, "GalleryInfo"))
+        .then((snapshot) => {
+            snapshot.forEach(prod => {
+                console.log(prod.val());
+                productArray.push(prod.val());
+            });
+            updateProducts();
+        })
+}
+
+function updateProducts() {
+    let i = 0;
+    productArray.forEach(prod => {
+        updateProduct(prod, i++);
+    });
+}
+function updateProduct(product, index) {
     let url = encodeURI("http://localhost:3000/art_page/" + product.ArtTitle);
     let html =
         `
