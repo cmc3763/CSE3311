@@ -17,9 +17,8 @@ const firebaseConfig = {
     appId: "1:453895598278:web:cac2395b4d9c635e54a7c7"
   };
 
+
 //Retrieve data from art page
-var removeCartItemButtons = document.getElementsByClassName('remove-button');
-var checkoutButton = document.getElementsByClassName('checkoutbutton');
 const Artist = localStorage.getItem('artistName');
 const Piece = localStorage.getItem('piece');
 const Description = localStorage.getItem('description');
@@ -30,27 +29,35 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const realdb = getDatabase(app);
 
+if(Piece == null)
+{
+    
+}
+else
+{
+    document.getElementById('artist').textContent = "Artist: " + Artist;
+    document.getElementById('Title1').textContent = "Title: " + Piece;
+    document.getElementById('price').textContent = "$" + Price;
+    document.getElementById('TheImage').src = image;
+    document.getElementById('SubPrice').textContent = "$" + Price;
+    var total = Number(Price) + 8;
+    document.getElementById('TotalPrice').textContent ="$" + total;
 
+}
 
-//This will change the art but it will also mess up every art on artpage
-//I dont know why it does that
-document.getElementById('artist').textContent = "Artist:" + Artist;
-document.getElementById('Title1').textContent = "Title:" + Piece;
-document.getElementById('price').textContent = "$" + Price;
-document.getElementById('TheImage').src = image;
-document.getElementById('SubPrice').textContent = "$" + Price;
-var total = Number(Price) + 8;
-document.getElementById('TotalPrice').textContent ="$" + total;
-
+// removing items from cart
+var removeCartItemButtons = document.getElementsByClassName('remove-button');
 for (var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i]
     button.addEventListener('click', function(event) {
+        localStorage.clear();
         var buttonClicked = event.target;
         buttonClicked.parentElement.parentElement.remove();
         checkQuantity();
     })
 }
 
+//Checkout with PayPal
 paypal.Buttons({
     createOrder: (data,actions) => {
        return actions.order.create({
@@ -80,18 +87,20 @@ paypal.Buttons({
     }
 }).render('#paypal-button');
 
-
-function updateCartTotal() {
-    //need to update cart total
-}
-
 // If the cart is empty
 function checkQuantity() {
     var cartQuantity = document.getElementsByClassName('preview');
     if (cartQuantity.length < 1) {
         var summary = document.getElementsByClassName('summary');
         summary[0].remove();
+        var element = document.createElement("input");
+        var label = document.createElement("Label");
+        var cart = document.getElementsByClassName("cart1")[0];
+        label.innerHTML = "Your cart is empty.";  
+        element.setAttribute("type", "text");
+        element.setAttribute("value", "");
+        element.setAttribute("name", "Test Name");
+        element.setAttribute("style", "width:200px");
+        cart.appendChild(label);
     }
-    // need to display "your cart is empty"
-    //alert("Your cart is empty");
 }

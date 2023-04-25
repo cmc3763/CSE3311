@@ -53,7 +53,7 @@
             <div class="h1">
                 <p class="text-6xl" id="piece"><strong>{{ image.ArtTitle }}</strong></p>
                 <br>
-                <p class="text-6xl text-right" id="artistName"><i>{{ image.Artist }}</i></p>
+                <p class="text-6xl text-left" id="artistName"><i>{{ image.Artist }}</i></p>
             </div>
             <div class="Description">
                 <p class="pt-3 text-2xl" id="imageDescription">
@@ -65,15 +65,17 @@
                     <p class="text-6xl pr-8" id="price">
                         <strong id="priceValue">{{ imagePrice() }}</strong>
                         <div id="buttonGroup" class="text-right my-12 w-full">
-                            <button class="addtocart">Add to Cart</button>
+                            <button class="addtocart" id="addToCart">Add to Cart</button>
                         </div>
                     </p>
                 </div>
                 <div id="reviews">
                     <h1>Artist Reviews</h1> 
-                    <ul class="list-disc" id="reviewsList"></ul>
+                    <ul class="list-disc" id="reviewsList">
+                        <!-- Reviews get added here as <li> tags -->
+                    </ul>
                     <input type="textarea" placeholder="Leave a review" id="reviewTextbox"></input>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="postReviewBtn">Submit</button>
                 </div> 
             </div>
             
