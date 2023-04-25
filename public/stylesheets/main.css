@@ -127,6 +127,10 @@ button:hover {
     padding-left: 10px;
   }
 
+  .search {
+    color: #18122B;
+  }
+
   .navbar-center {
 
   }
@@ -190,4 +194,8 @@ button:hover {
     margin-top: 5em;
     margin-bottom: 1em;
     width: 400px;
+}
+
+.hide {
+  display: none;
 }

@@ -552,6 +552,10 @@ video {
   padding-left: 10px;
 }
 
+.search {
+  color: #18122B;
+}
+
 .card {
   border-bottom-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
@@ -1001,4 +1005,8 @@ button:hover {
   margin-top: 5em;
   margin-bottom: 1em;
   width: 400px;
+}
+
+.hide {
+  display: none;
 }
