@@ -44,7 +44,7 @@ var password = document.getElementById("password");
 
       });
       alert("signup sucessfully")
-     
+      window.location = "/login"
 
 
     })
