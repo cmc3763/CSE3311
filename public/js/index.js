@@ -76,7 +76,7 @@ function AddAProduct(product, index) {
     let url = encodeURI("http://localhost:3000/art_page/" + product.ArtTitle);
     let html =
         `
-    <a href="` + url + `">
+    <a id="` + product.ArtTitle + `Product" href="` + url + `">
         <div class="w-80 mb-2">
             <img src="`+ product.LinksOfImagesArray[0] + `" class="w-full rounded-tr-3xl" id="thumbnail` + index + `">
             <div class="p-2 border-2 w-full font-thin text-center rounded-bl-3xl border-black">
@@ -101,7 +101,8 @@ searchInput.addEventListener("input", (e) => {
     console.log(value);
     productArray.forEach(prod => {
         const isVisible = prod.ArtTitle.toLowerCase().includes(value) || prod.Artist.toLowerCase().includes(value);
-        prod.element.classList.toggle("hide", !isVisible);
+        let el = document.getElementById(prod.ArtTitle + "Product");
+        el.classList.toggle("hide", !isVisible);
     })
 })
 
