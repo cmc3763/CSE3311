@@ -698,10 +698,6 @@ video {
   width: 25%;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
 .w-8\/12 {
   width: 66.666667%;
 }
@@ -800,6 +796,10 @@ video {
 
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {

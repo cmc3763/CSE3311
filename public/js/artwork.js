@@ -18,38 +18,16 @@ const realdb = getDatabase(app);
 const auth = getAuth();
 var image = null;
 
+loadImage();
 
-function loadReviewsFor(artist) {
-    let reviewsRef = ref(realdb, "ArtistReviews");
-    let reviewsList = document.getElementById("reviewsList");
-    get(reviewsRef).then((snapshot) => {
-        if (snapshot.exists()) {
-            let reviews = snapshot.val();
-            reviews.forEach((review) => {
-                if (review.artist === artist) {
-                    let liElement = document.createElement("li");
-                    liElement.innerHTML = `<strong>${review.reviewer} said:</strong> ${review.content}`;
-                    reviewsList.appendChild(liElement);
-                }
-            })
-        } else {
-            console.log("Couldn't get review data from Firestore (request success, but no data was returned)");
-        }
-    }).catch(console.error);
-}
+document.getElementById("postReviewBtn").addEventListener('click', postReview);
 
 
 
-// This is really really bad and needs to be refactored but I don't have the resources now.
-// Right now, it's fetching all images from the DB and finding the current image by matching 
-// the last part of the URL to the name of the image. This is because there's no ID attached to each
-// image (at least at the moment).
-//
-// What we should do is put the images ID as a url parameter from the gallery page, then dynamically
-// fetch just that image when we load this page.
-//
-// After fetching all images and finding the current one, it fill in the HTML elements with the image
-// name, description, artist, etc. through manual DOM manipulation (gross)
+// Gets all the images from the realtime DB and sorts through them by name.
+// This is a crime against god and all that exists, but hey it works :)
+// Also updates all the other things like description and price with direct DOM
+// manipulation. Gross.
 async function loadImage() {
     const dbref = ref(realdb);
     await get(child(dbref, "GalleryInfo"))
@@ -76,12 +54,62 @@ async function loadImage() {
 }
 
 
-loadImage();
+function loadReviewsFor(artist) {
+    let reviewsRef = ref(realdb, "ArtistReviews");
+    let reviewsList = document.getElementById("reviewsList");
+    // Clear it so that when we call this again to reload reviews, it doesn't
+    // duplicate reviews
+    reviewsList.innerHTML = "";
+    get(reviewsRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            let reviews = snapshot.val();
+            reviews.forEach((review) => {
+                if (review.artist === artist) {
+                    let liElement = document.createElement("li");
+                    liElement.innerHTML = `<strong>${review.reviewer} said:</strong> ${review.content}`;
+                    reviewsList.appendChild(liElement);
+                }
+            })
+        } else {
+            console.log("Couldn't get review data from Firestore (request success, but no data was returned)");
+        }
+    }).catch(console.error);
+}
+
+function postReview() {
+    let reviewTextbox = document.getElementById("reviewTextbox");
+    // this one is particularly fucked
+    let artist = document.getElementById("artistName").innerText;
+    // come to think of it, so is this one
+    let reviewer = JSON.parse(sessionStorage.getItem("user")).email;
+
+    if (reviewTextbox.value.length == 0 || artist.length == 0 || reviewer.length == 0) {
+        console.error("Something went wrong, I'm missing values");
+        console.log(reviewTextbox.value);
+        console.log(artist);
+        console.log(reviewer);
+        return;
+    }
+
+    get(ref(realdb), "ArtistReviews/").then(snapshot => {
+        if (snapshot.exists()) {
+            let id = snapshot.val().ArtistReviews.length;
+            set(ref(realdb, "ArtistReviews/" + id), {
+                artist: artist,
+                reviewer: reviewer,
+                content: reviewTextbox.value
+            });
+            reviewTextbox.value = "";
+            loadReviewsFor(artist);
+        }
+    })
+}
 
 //If user adds to cart
-var itemToAdd = document.getElementById('buttonGroup')
+var itemToAdd = document.getElementById('addToCart');
 itemToAdd.addEventListener('click', function(event) {
     var buttonClicked = event.target;
+    console.log("Adding to cart");
     //need to pass image, description, and price
     localStorage.setItem("piece", image.ArtTitle);
     localStorage.setItem("artistName", image.Artist);
@@ -90,7 +118,7 @@ itemToAdd.addEventListener('click', function(event) {
     localStorage.setItem("image", image.LinksOfImagesArray[0]);
     window.location.href = "http://localhost:3000/cart";
 
-    
+
 })
 
 
