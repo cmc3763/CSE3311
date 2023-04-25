@@ -45,13 +45,6 @@ else
 
 }
 
-
-//This will change the art but it will also mess up every art on artpage
-//I dont know why it does that
-
-
-
-
 // removing items from cart
 var removeCartItemButtons = document.getElementsByClassName('remove-button');
 for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -64,6 +57,7 @@ for (var i = 0; i < removeCartItemButtons.length; i++) {
     })
 }
 
+//Checkout with PayPal
 paypal.Buttons({
     createOrder: (data,actions) => {
        return actions.order.create({
