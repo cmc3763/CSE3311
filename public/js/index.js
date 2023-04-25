@@ -98,7 +98,6 @@ function AddAProduct(product, index) {
 const searchInput = document.querySelector("[data-search]");
 searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase();
-    console.log(value);
     productArray.forEach(prod => {
         const isVisible = prod.ArtTitle.toLowerCase().includes(value) || prod.Artist.toLowerCase().includes(value);
         let el = document.getElementById(prod.ArtTitle + "Product");
