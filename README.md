@@ -1,5 +1,5 @@
 # CSE3311
-Repository for the Art Mart project
+Repository for the Art Mart project.
 A website made for new upcoming artist to post their art and sale it for a minimial pay cut.
 
 # Installation
